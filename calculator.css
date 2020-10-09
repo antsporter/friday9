@@ -1,0 +1,90 @@
+body { 
+	background-color: 041B15;
+}
+
+.calc_container {
+	border: solid;
+	border-radius: 10px;
+	border-color: 136F63; 
+	text-align: center;
+	padding: 5px;
+	width: 400px;
+	height: 480px;
+	margin: 100px auto;
+}
+
+input#inputwindow {
+    font-size: 50px;
+	text-align: right;
+	height: 75px;
+	width: 100%;
+	background-color: #999;
+	color: 041B15;
+	padding: 12px 20px;
+	margin-bottom: 2px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid 4CE0D2;
+}
+
+input[type="button"]{
+	width: 75px;
+	height: 75px;
+	font-size: 25px;
+	margin: 2px 0;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.836);
+	background: turquoise;
+	border-radius: 5px;
+	border: none;
+	transition: all 0.4s ease 0s;
+	color:black;
+}
+
+.equals {
+    height: 155px !important;
+    float: right !important;
+    
+    margin-right: 5px !important;
+    margin-top: 2px !important; 
+    background: #136F63 !important;
+}
+
+.clear {
+    background: red !important;
+    color: white !important;
+}
+.memory {
+    background: #1D7874 !important;
+
+}
+
+input[type="button"]:hover{
+	background: grey !important;
+	color: 84CAE7;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+.functions{
+	font-weight: bolder;
+	background:#136F63 !important;
+}
+
+.functions:hover{
+	font-weight: bolder;
+	color: 84CAE7 !important;
+}
+
+.operator {
+	font-weight: bolder;
+	background: #136F63 !important;
+}
+
+.operator:hover{
+	font-weight:bolder;
+	color: 84CAE7 !important;
+}

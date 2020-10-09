@@ -1,0 +1,110 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="calculator.css"> 
+</head>
+
+<script>
+	let screenRef = document.getElementById("inputwindow");
+	let numRef = document.getElementsByClassName("nums");
+	let opRef = document.getElementsByClassName("operator");
+	let funcRef = document.getElementsByClassName("functions");
+    let memory = [];
+ 
+	function pushButton(x) {
+		document.getElementById('inputwindow').value +=x;
+    }
+
+    function addMemory() {         
+        memory[memory.length++] = document.getElementById('inputwindow').value;
+        console.log(memory);
+	}
+    
+    function memRecall() {
+        document.getElementById('inputwindow').value = memory[memory.length-1];
+    }
+
+    function memMinus() {
+        memory.pop();
+        console.log(memory);
+    }
+
+    function memClear() {
+        memory = [];
+        console.log(memory);
+    }
+
+
+	function clearInput() {
+	  	document.getElementById('inputwindow').value = "";
+	}
+
+	function calculateResult() {
+		let screen = document.getElementById('inputwindow');
+		if(screen.value.length > 14){
+		  document.getElementById('inputwindow').value = "Err! Num too Long";
+		}else{	
+		let result = eval(document.getElementById('inputwindow').value);
+	  	document.getElementById('inputwindow').value = result;
+		}
+	}
+
+	function goBack() {
+    	let value = document.getElementById("inputwindow").value;
+    	document.getElementById("inputwindow").value = value.substr(0, value.length - 1);
+	}
+
+	function opposite(){
+		let b=document.getElementById("inputwindow");
+		let n = b.value;
+		n = n * -1;
+		b.value = n;
+	}
+</script>
+
+<body>
+
+<div class="calc_container">
+		<div>
+		<input type="text" name="inputwindow" id="inputwindow" disabled placeholder="0">
+		</div>
+		<div>
+			<input type="button" class="memory" id="memclear" value="MC" onclick="memClear()">
+			<input type="button" class="memory" id="memrecall" value="MR" onclick="memRecall()">
+			<input type="button" class="memory" id="memminus" value="M-" onclick="memMinus()">	
+			<input type="button" class="memory" id="memplus" value="M+" onclick="addMemory()">					
+			<input type="button" class="Clear" id="clear" value="C" onclick="clearInput()">
+		</div>
+		<div>
+			<input type="button" class="nums" id="seven" value="7" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="eight" value="8" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="nine" value="9" onclick="pushButton(this.value)">
+            
+            <input type="button" class="operator" id="plus" value="+" onclick="pushButton(this.value)">	
+			<input type="button" class="functions" id="negative" value= "+/-" id="opp" onclick="opposite()">			
+		</div>
+		<div>
+			<input type="button" class="nums" id="four" value="4" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="five" value="5" onclick="pushButton(this.value)">
+            <input type="button" class="nums" id="six" value="6" onclick="pushButton(this.value)">
+            <input type="button" class="operator" id="minus" value="-" onclick="pushButton(this.value)">
+						<input type="button" class="functions" id="back" value='Del' onclick="goBack()">			
+        </div>
+		<div>
+			<input type="button" class="nums" id="one" value="1" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="two" value="2" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="three" value="3" onclick="pushButton(this.value)">
+			<input type="button" class="operator" id="by" value="x" onclick="pushButton('*')">
+			<input type="button" class="equals" id="equal" value="=" onclick="calculateResult()">
+        </div>
+	    <div>		
+			<input type="button" class="nums" id="zero" value="0" onclick="pushButton(this.value)">
+			<input type="button" class="nums" id="dblzero" value="00" onclick="pushButton(this.value)">	
+			<input type="button" class="nums" id="decimal" value="." onclick="pushButton(this.value)">			
+			<input type="button" class="operator" id="divide" value="÷" onclick="pushButton('/')">
+        </div>
+</div>
+
+</body>
+
+</html>
