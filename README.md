@@ -9,6 +9,7 @@ I thought it would go ok as the logic makes sense to me, I wanted to complete th
 What went well?
 
 I got it sorted out which made me feel confident going into the stretch goals.
+Working with Oli and Josie helped us all worked together and get the code working.
 
 
 What didn't go as planned?
